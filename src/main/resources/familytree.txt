@@ -1,0 +1,31 @@
+ADD_KING;King Shan;M
+ADD_SPOUSE;King Shan;Queen Anga;F
+ADD_CHILD;Queen Anga;Chit;M
+ADD_SPOUSE;Chit;Amba;F
+ADD_CHILD;Queen Anga;Ish;M
+ADD_CHILD;Queen Anga;Vich;M
+ADD_SPOUSE;Vich;Lika;F
+ADD_CHILD;Queen Anga;Aras;M
+ADD_SPOUSE;Aras;Chitra;F
+ADD_CHILD;Queen Anga;Satya;F
+ADD_SPOUSE;Satya;Vyan;M
+ADD_CHILD;Amba;Dritha;F
+ADD_SPOUSE;Dritha;Jaya;M
+ADD_CHILD;Amba;Tritha;F
+ADD_CHILD;Amba;Vritha;M
+ADD_CHILD;Dritha;Yodhan;M
+ADD_CHILD;Lika;Vila;F
+ADD_CHILD;Lika;Chika;F
+ADD_CHILD;Chitra;Jnki;F
+ADD_SPOUSE;Jnki;Arit;M
+ADD_CHILD;Chitra;Ahit;M
+ADD_CHILD;Jnki;Laki;M
+ADD_CHILD;Jnki;Lavnya;F
+ADD_CHILD;Satya;Asva;M
+ADD_SPOUSE;Asva;Satvy;F
+ADD_CHILD;Satya;Vyas;M
+ADD_SPOUSE;Vyas;Krpi;F
+ADD_CHILD;Satya;Atya;F
+ADD_CHILD;Satvy;Vasa;M
+ADD_CHILD;Krpi;Kriya;M
+ADD_CHILD;Krpi;Krithi;F
