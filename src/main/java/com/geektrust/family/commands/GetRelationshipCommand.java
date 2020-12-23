@@ -22,13 +22,13 @@ public class GetRelationshipCommand implements Command {
             return;
         }
         if (relatives.isEmpty()) {
-            System.out.println("NONE");
+            System.out.format("No %s found for person %s\n",relation,name);
             return;
         }
         String output = relatives.toString()
                 .replace("[", "")
                 .replace("]", "")
                 .replaceAll(",\\s+", " ");
-        System.out.println(output);
+        System.out.format("The %s of %s are %s\n",relation,name,relatives.toString());
     }
 }

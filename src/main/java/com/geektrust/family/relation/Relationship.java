@@ -21,6 +21,7 @@ public class Relationship {
     public static final String PATERNAL_AUNTS = "Paternal-Aunt";
     public static final String MATERNAL_UNCLES = "Maternal-Uncle";
     public static final String MATERNAL_AUNTS = "Maternal-Aunt";
+    public static final String PARENTS = "Parents";
 
     /**
      * Get all the relatives of the person with name {@code name} and based
@@ -55,10 +56,12 @@ public class Relationship {
 
         Person person = FamilyTree.findByName(name);
         if (isNull(person)) {
+            System.out.format("Person %s not found ",name);
             return ("PERSON_NOT_FOUND");
         }
 
         if (!person.isValidRelation(relation)) {
+            System.out.format("Relation %s not supported ",relation);
             return ("RELATION_DOES_NOT_EXIST");
         }
 

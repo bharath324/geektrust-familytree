@@ -26,6 +26,8 @@ public class Person {
         relationBehaviorMap.put(MATERNAL_AUNTS, person -> Person.getMaternalAuntiesOrUncles(person, Sex.FEMALE));
         relationBehaviorMap.put(PATERNAL_UNCLES, person -> Person.getPaternalAuntOrUncle(person, Sex.MALE));
         relationBehaviorMap.put(PATERNAL_AUNTS, person -> Person.getPaternalAuntOrUncle(person, Sex.FEMALE));
+        relationBehaviorMap.put(PARENTS, person -> Arrays.asList(person.getParents().getFather(),
+                                                                    person.getParents().getMother()));
     }
 
     private String name;
@@ -256,14 +258,14 @@ public class Person {
         if (sex == Sex.MALE && this != child.getParents().getFather()) {
             throw new IllegalArgumentException(
                     String.format("Child %s has a  father:%s who is different " +
-                                    "from the father:%s this child is added\n",
+                                    "from this male person:%s the child added to \n",
                             child, child.getParents().getFather(), this.name));
 
         }
         if (sex == Sex.FEMALE && this != child.getParents().getMother()) {
             throw new IllegalArgumentException(
-                    String.format("Child %s has a  father:%s who is different " +
-                                    "from the father:%s this child is added\n",
+                    String.format("Child %s has a  mother:%s who is different " +
+                                    "from this female person:%s the child added to\n",
                             child, child.getParents().getMother(), this.name));
 
         }
