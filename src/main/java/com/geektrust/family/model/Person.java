@@ -201,15 +201,24 @@ public class Person {
     }
 
     public int getGeneration() {
+
+        if(Objects.isNull(this.parents) && Objects.isNull(this.getSpouse())){
+              throw new IllegalStateException("Person "+this.name+" has neither a spouse nor parents");
+        }
+        if(Objects.isNull(this.parents)){
+            Person spouse = this.getSpouse();
+            return spouse.getGeneration();
+        }
         Parents tempParents = this.parents;
         int depth = 0;
         while (tempParents != null) {
             depth++;
-            Parents parents = tempParents.getFather().getParents();
-            if (parents == null) {
-                tempParents = tempParents.getMother().getParents();
+            Parents paternalGrandParents = tempParents.getFather().getParents();
+            Parents maternalGrandParents = tempParents.getMother().getParents();
+            if (paternalGrandParents == null) {
+                tempParents = maternalGrandParents;
             } else {
-                tempParents = parents;
+                tempParents = paternalGrandParents;
             }
         }
         return depth;
